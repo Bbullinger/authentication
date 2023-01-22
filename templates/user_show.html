@@ -1,0 +1,12 @@
+{% extends 'index.html' %} {% block title %} {{user.username}} {% endblock %} {%
+block content %}
+<h2>{{user.username}}</h2>
+<div class="show-user">
+  <ul>
+    <li>{{user.username}}</li>
+    <li>{{user.first_name}} {{user.last_name}}</li>
+    <li>E-mail:{{user.email}}</li>
+  </ul>
+</div>
+
+{% endblock %}

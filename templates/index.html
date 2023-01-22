@@ -7,6 +7,15 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>working</h1>
+    {% block title %}
+    <h1>Feedback</h1>
+    {% endblock %} {% block content %} {% for msg in get_flashed_messages() %}
+    <h2 class="flash-message">{{msg}}</h2>
+    {% endfor %}
+    <a href="/login">Log In</a>
+    <a href="/register">Register</a>
+    {% if session["user_id"] %}
+    <a href="/logout">Log Out</a>
+    {% endif %} {% endblock %}
   </body>
 </html>
